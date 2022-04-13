@@ -1,7 +1,6 @@
 package com.example.mobile_programing_assignment02
 
 import android.os.Bundle
-import android.widget.TextView
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.compose.foundation.BorderStroke
@@ -32,8 +31,8 @@ class MainActivity : ComponentActivity() {
         super.onCreate(savedInstanceState)
         setContent {
             Mobileprogramingassignment02Theme {
-                var visible: MutableState<Boolean> = remember { mutableStateOf(false) }
-                Alert(setVisible= visible)
+                val button: MutableState<Boolean> = remember { mutableStateOf(false) }
+                Alert(setVisible= button)
                 TextView()
                 Column(
                     modifier = Modifier.fillMaxWidth().fillMaxHeight(),
@@ -44,7 +43,7 @@ class MainActivity : ComponentActivity() {
                         .border(border = BorderStroke(width = 5.dp, brush = SolidColor(Color.Blue)))
                     )
                     {
-                        TextButton(onClick = { visible.value = true }) {
+                        TextButton(onClick = { button.value = true }) {
                             Text(text = "Info",color= Color.Black)
                         }
                     }
@@ -89,8 +88,8 @@ fun Alert(setVisible: MutableState<Boolean>)
                     Text(text = "OK")
                 }
             },
-            title = { Text(text = "Alert Dialog")},
-            text = { Text(text = "Welcome to my journey. This is the greatest road on following the success. My experience so far with the android elective is positive and conducted very well" +
+            title = { Text(text = "Information")},
+            text = { Text(text = "Welcome to my journey. This is the greatest road on following the success. My experience so far with the android elective is positive and conducted very well " +
                     "with a smart and experienced lecturer ANIKWE ARINZE.")}
         )
 
