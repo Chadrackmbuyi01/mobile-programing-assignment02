@@ -55,6 +55,7 @@ class MainActivity : ComponentActivity() {
     }
 }
 
+@Preview
 @Composable
 fun TextView() {
     Column(
@@ -66,23 +67,21 @@ fun TextView() {
 
         horizontalAlignment = Alignment.CenterHorizontally,
     ) {
-
         Text(
-
             text = "Welcome to My Jetpack Compose Journey",
-
             style = TextStyle(
-                color = Color.Black,
+                color = Color.Red,
                 fontWeight = FontWeight.Black,
                 fontFamily = FontFamily.Default,
                 background = Color.White,
                 shadow = Shadow(color = Color.Green),
                 textAlign = TextAlign.Center,
             ),
-            modifier = Modifier.padding(all = Dp(20.0F))
+            modifier = Modifier.padding(all = Dp(22.0F))
         )
     }
 }
+@Preview
 @Composable
 fun Alert(setVisible: MutableState<Boolean>)
 {
@@ -95,8 +94,8 @@ fun Alert(setVisible: MutableState<Boolean>)
                     Text(text = "OK")
                 }
             },
-            title = { Text(text = "Alert Dialog Title")},
-            text = { Text(text = " write here")}
+            title = { Text(text = "Alert Dialog")},
+            text = { Text(text = "My experience so far with the android elective is positive.")}
         )
 
 
