@@ -40,15 +40,14 @@ class MainActivity : ComponentActivity() {
                     verticalArrangement = Arrangement.Center,
                     horizontalAlignment = Alignment.CenterHorizontally,
                 ) {
-                    Box( modifier = Modifier.padding(all = Dp(10F)).background(color = MaterialTheme.colors.secondary)
-                        .border(border = BorderStroke(width = 1.dp, brush = SolidColor(Color.Green)))
+                    Box( modifier = Modifier.padding(all = Dp(20F)).background(color = MaterialTheme.colors.secondary)
+                        .border(border = BorderStroke(width = 5.dp, brush = SolidColor(Color.Blue)))
                     )
                     {
                         TextButton(onClick = { visible.value = true }) {
-                            Text(text = "Info",color= Color.White)
+                            Text(text = "Info",color= Color.Black)
                         }
                     }
-
                 }
             }
         }
@@ -59,18 +58,14 @@ class MainActivity : ComponentActivity() {
 @Composable
 fun TextView() {
     Column(
-
         modifier = Modifier.fillMaxWidth().fillMaxHeight(),
-
-
         verticalArrangement = Arrangement.Top,
-
         horizontalAlignment = Alignment.CenterHorizontally,
     ) {
         Text(
             text = "Welcome to My Jetpack Compose Journey",
             style = TextStyle(
-                color = Color.Red,
+                color = Color.Black,
                 fontWeight = FontWeight.Black,
                 fontFamily = FontFamily.Default,
                 background = Color.White,
@@ -95,7 +90,8 @@ fun Alert(setVisible: MutableState<Boolean>)
                 }
             },
             title = { Text(text = "Alert Dialog")},
-            text = { Text(text = "My experience so far with the android elective is positive.")}
+            text = { Text(text = "Welcome to my journey. This is the greatest road on following the success. My experience so far with the android elective is positive and conducted very well" +
+                    "with a smart and experienced lecturer ANIKWE ARINZE.")}
         )
 
 
