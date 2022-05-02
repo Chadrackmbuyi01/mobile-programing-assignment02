@@ -1,5 +1,6 @@
 package com.example.mobile_programing_assignment02
 
+import android.content.Intent
 import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
@@ -24,6 +25,7 @@ import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.Dp
 import androidx.compose.ui.unit.dp
+import androidx.compose.ui.unit.sp
 import com.example.mobile_programing_assignment02.ui.theme.Mobileprogramingassignment02Theme
 
 class MainActivity : ComponentActivity() {
@@ -34,12 +36,14 @@ class MainActivity : ComponentActivity() {
                 val button: MutableState<Boolean> = remember { mutableStateOf(false) }
                 Alert(setVisible= button)
                 TextView()
-                Column(
-                    modifier = Modifier.fillMaxWidth().fillMaxHeight(),
+                Column(modifier = Modifier.fillMaxWidth()
+                        .fillMaxHeight(),
                     verticalArrangement = Arrangement.Center,
                     horizontalAlignment = Alignment.CenterHorizontally,
                 ) {
-                    Box( modifier = Modifier.padding(all = Dp(20F)).background(color = MaterialTheme.colors.secondary)
+                    Box( modifier = Modifier
+                        .padding(all = Dp(20F))
+                        .background(color = MaterialTheme.colors.secondary)
                         .border(border = BorderStroke(width = 5.dp, brush = SolidColor(Color.Blue)))
                     )
                     {
@@ -47,17 +51,34 @@ class MainActivity : ComponentActivity() {
                             Text(text = "Info",color= Color.Black)
                         }
                     }
+
+
+                    Button(onClick = {val navigate= Intent(this@MainActivity,SecondScreen::class.java)
+                        startActivity(navigate)},
+                        border= BorderStroke(10.dp, Color.Yellow),
+                        contentPadding = PaddingValues(16.dp),
+                        modifier = Modifier
+                            .size(width = 350.dp, height = 70.dp)
+                            .background(color = Color.White)
+
+
+                        ) {
+                        Text(text = "Start journey",fontSize = 25.sp, color = Color.Black)
+                    }  }
+                    }
                 }
             }
         }
-    }
-}
+
+
 
 @Preview
 @Composable
 fun TextView() {
     Column(
-        modifier = Modifier.fillMaxWidth().fillMaxHeight(),
+        modifier = Modifier
+            .fillMaxWidth()
+            .fillMaxHeight(),
         verticalArrangement = Arrangement.Top,
         horizontalAlignment = Alignment.CenterHorizontally,
     ) {
@@ -77,7 +98,7 @@ fun TextView() {
 }
 @Preview
 @Composable
-fun Alert(setVisible: MutableState<Boolean>)
+private fun Alert(setVisible: MutableState<Boolean>)
 {
     if(setVisible.value){
         AlertDialog(
