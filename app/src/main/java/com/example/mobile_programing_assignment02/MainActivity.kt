@@ -55,15 +55,15 @@ class MainActivity : ComponentActivity() {
 
                     Button(onClick = {val navigate= Intent(this@MainActivity,SecondScreen::class.java)
                         startActivity(navigate)},
-                        border= BorderStroke(10.dp, Color.Yellow),
-                        contentPadding = PaddingValues(16.dp),
+                        border= BorderStroke(5.dp, Color.Yellow),
+                        contentPadding = PaddingValues(5.dp),
                         modifier = Modifier
-                            .size(width = 350.dp, height = 70.dp)
+                            .size(width = 200.dp, height = 60.dp)
                             .background(color = Color.White)
 
 
                         ) {
-                        Text(text = "Start journey",fontSize = 25.sp, color = Color.Black)
+                        Text(text = "Start journey",fontSize = 18.sp, color = Color.Black)
                     }  }
                     }
                 }
