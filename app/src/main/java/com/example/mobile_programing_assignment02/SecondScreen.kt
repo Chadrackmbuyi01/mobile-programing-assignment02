@@ -26,6 +26,7 @@ import androidx.compose.ui.text.withStyle
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import androidx.core.content.ContextCompat.startActivity
 
 
 class SecondScreen : ComponentActivity() {
@@ -122,7 +123,8 @@ fun ParagraphStyle() {
 
     ) {
 
-        Button(onClick = {},
+
+        /*Button(onClick = {},
             shape= CircleShape,
             contentPadding = PaddingValues(16.dp),
             border= BorderStroke(5.dp, Gray),
@@ -131,5 +133,5 @@ fun ParagraphStyle() {
             )
         ) {
             Text(text = "Current Modules", fontSize = 15.sp)
-        }}
+        }*/}
 }
