@@ -98,7 +98,7 @@ fun TextView() {
 }
 @Preview
 @Composable
-private fun Alert(setVisible: MutableState<Boolean>)
+fun Alert(setVisible: MutableState<Boolean>)
 {
     if(setVisible.value){
         AlertDialog(

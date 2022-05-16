@@ -26,7 +26,9 @@ import androidx.compose.ui.text.withStyle
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import androidx.core.content.ContextCompat
 import androidx.core.content.ContextCompat.startActivity
+import androidx.navigation.NavHost
 
 
 class SecondScreen : ComponentActivity() {
@@ -44,8 +46,8 @@ class SecondScreen : ComponentActivity() {
                 ParagraphStyle()
 
                 Button(onClick = {
-                    val navigate= Intent(this@SecondScreen,MainActivity::class.java)
-                    startActivity(navigate)
+                    val navigate2= Intent(this@SecondScreen,ThirdScreen::class.java)
+                    startActivity(navigate2)
                 },
 
                     shape= CircleShape,
@@ -59,6 +61,28 @@ class SecondScreen : ComponentActivity() {
                     Text(text = "Return\n", fontSize = 18.sp, color = White)
                 }
             }
+            Column(
+                Modifier
+
+
+                    .padding(100.dp),
+                verticalArrangement = Arrangement.spacedBy(24.dp)
+
+            ) {
+
+                TextButton(onClick = {
+                    val navigate2= Intent(this@SecondScreen,ThirdScreen::class.java)
+                    startActivity(navigate2)
+                },
+                    shape= CircleShape,
+                    contentPadding = PaddingValues(16.dp),
+                    border= BorderStroke(5.dp, Gray),
+                    modifier = Modifier.size(width = 200.dp,height = 60.dp),
+                    colors = ButtonDefaults.textButtonColors(backgroundColor = Blue, contentColor = White
+                    )
+                ) {
+                    Text(text = "Current Modules", fontSize = 15.sp)
+                }}
 
         }
     }
@@ -114,24 +138,4 @@ fun ParagraphStyle() {
         )
 
     }
-    Column(
-        Modifier
-
-
-            .padding(100.dp),
-        verticalArrangement = Arrangement.spacedBy(24.dp)
-
-    ) {
-
-
-        /*Button(onClick = {},
-            shape= CircleShape,
-            contentPadding = PaddingValues(16.dp),
-            border= BorderStroke(5.dp, Gray),
-            modifier = Modifier.size(width = 200.dp,height = 60.dp),
-            colors = ButtonDefaults.textButtonColors(backgroundColor = Blue, contentColor = White
-            )
-        ) {
-            Text(text = "Current Modules", fontSize = 15.sp)
-        }*/}
 }
